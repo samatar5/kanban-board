@@ -20,7 +20,7 @@
       padding: 15px 30px;
       margin-right: 20px;
       border-radius: 0 15px 15px 0px;
-      background-color: black;
+
       font-weight: 700;
       font-size: 14px;
       cursor: pointer;
@@ -37,7 +37,7 @@
         background-color: var(--text-dimmed);
         color: var(--primary);
       }
-      &.last-child {
+      &:last-child {
         background-color: transparent;
         color: var(--primary);
         &:hover {
