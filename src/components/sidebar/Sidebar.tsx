@@ -6,7 +6,8 @@ import { useBoardContext } from "../../context/BoardsContext";
 type Props = {};
 
 export default function Sidebar({}: Props) {
-  const { projects, createProject } = useBoardContext();
+  const { projects, createProject, currentProject, changeBoard } =
+    useBoardContext();
   const [showCreateProject, setShowCreateProject] = useState(false);
   const [projectName, setProjectName] = useState("");
 
@@ -14,8 +15,11 @@ export default function Sidebar({}: Props) {
     <div className="sidebar">
       <p>All BOARDS ( 2 )</p>
       <ul className="sidebar-items">
-        {projects.map((project) => (
-          <li className="">
+        {projects.map((project, index) => (
+          <li
+            className={project.id === currentProject.id ? "active" : ""}
+            onClick={() => changeBoard(index)}
+          >
             <Folder />
             {project.name}
           </li>
@@ -40,7 +44,7 @@ export default function Sidebar({}: Props) {
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
           />
-          <button onClick={() => createProject(projectName)}>Create</button>
+          <button>Create</button>
         </form>
       )}
     </div>
