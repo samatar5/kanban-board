@@ -23,6 +23,23 @@ body {
   background-color: var(--bg-dark-gray);
   color: var(--text);
 }
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .main-container {
   display: flex;
+  flex: 1;
+}
+
+.btn {
+  background-color: var(--primary);
+  cursor: pointer;
+  border: none;
+  color: var(--text);
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
